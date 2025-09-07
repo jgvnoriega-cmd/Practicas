@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(253, 160, 133, 0.15);
+            padding: 40px 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .profile {
+            flex: 1 1 250px;
+            text-align: center;
+            border-right: 2px solid #fda085;
+            padding-right: 32px;
+        }
+        .profile img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 24px rgba(253, 160, 133, 0.15);
+            border: 6px solid #f6d365;
+            margin-bottom: 18px;
+        }
+        .profile h1 {
+            color: #f76d6d;
+            font-size: 40px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .profile p {
+            font-size: 20px;
+            color: #555;
+        }
+        .sections {
+            flex: 2 1 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .section {
+            background: #f6d36522;
+            border-radius: 16px;
+            padding: 24px 28px;
+            box-shadow: 0 2px 8px rgba(253, 160, 133, 0.08);
+        }
+        .section h2 {
+            color: #f76d6d;
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            border-bottom: 2px solid #fda085;
+            padding-bottom: 6px;
+        }
+        .section ul, .section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .skills-list, .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li, .interests-list li {
+            background: #fda085;
+            color: #fff;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .contact {
+            background: #f6d36544;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 18px;
+            text-align: center;
+            font-size: 18px;
+            color: #222;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                padding: 20px 8px;
+            }
+            .profile {
+                border-right: none;
+                padding-right: 0;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--  Este es un comentario -->
+    <div class="container">
+        <div class="profile">
+            <img src="J.jpg" alt="Johan Vasquez">
+            <h1>Johan Vasquez</h1>
+            <p>Estudiante en la Universidad La Salle Bajío<br>
+            Ingeniería en Tecnología y Soluciones de Negocio</p>
+            <div class="contact">
+                <strong>Contacto:</strong><br>
+                Email: johan@email.com<br>
+                Tel: (477) 123-4567<br>
+                León, GTO
+            </div>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <h2>Idiomas</h2>
+                <ul>
+                    <li>Español: Lengua materna</li>
+                    <li>Inglés: Nivel Avanzado</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Habilidades</h2>
+                <ul class="skills-list">
+                    <li>Creativo</li>
+                    <li>Inteligente</li>
+                    <li>Carismático</li>
+                    <li>Responsable</li>
+                    <li>Superación</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Intereses</h2>
+                <ul class="interests-list">
+                    <li>Carnicería</li>
+                    <li>Videojuegos</li>
+                    <li>Películas</li>
+                    <li>Cantar</li>
+                    <li>Programación</li>
+                    <li>Avances Tecnológicos</li>
+                    <li>Inversiones en Negocios</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

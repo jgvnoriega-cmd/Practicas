@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 5</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #232526 0%, #414345 100%);
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .playlist-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #181818;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            padding: 40px 32px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .podcast-section {
+            text-align: center;
+            margin-bottom: 32px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 24px;
+        }
+        .podcast-section audio {
+            margin: 18px auto;
+            display: block;
+        }
+        .playlist-title {
+            text-align: left;
+            font-size: 32px;
+            color: #00b4d8;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-left: 6px solid #00b4d8;
+            padding-left: 16px;
+        }
+        .playlist-frames {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-top: 20px;
+        }
+        .playlist-item {
+            background: #222;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: box-shadow 0.3s;
+            border-bottom: 2px solid #333;
+        }
+        .playlist-item:hover {
+            box-shadow: 0 8px 32px rgba(0,180,216,0.18);
+            background: #282828;
+        }
+        .playlist-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #00b4d8;
+            min-width: 50px;
+            text-align: center;
+        }
+        .playlist-info {
+            flex: 1;
+        }
+        .playlist-info .song-title {
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .playlist-info .song-desc {
+            font-size: 16px;
+            color: #bdbdbd;
+        }
+        .playlist-video {
+            min-width: 320px;
+            max-width: 400px;
+        }
+        .playlist-video iframe {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            border: none;
+            background: #111;
+        }
+        @media (max-width: 900px) {
+            .playlist-item {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px;
+            }
+            .playlist-video iframe {
+                height: 160px;
+            }
+        }
+        @media (max-width: 700px) {
+            .playlist-container {
+                padding: 10px 2px;
+            }
+            .playlist-title {
+                font-size: 22px;
+            }
+            .playlist-video iframe {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="playlist-container">
+        <h1>Podcast de Johan</h1>  
+        <h2>Bienvenida a la Playlist</h2>
+        <div class="podcast-section">
+            <audio controls>
+                <source src="Audios/ElevenLabs_2025-09-04T13_55_20_Brian_pre_sp100_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+            </audio>
+            <p>Este podcast habla de una bienvenida</p>
+        </div>
+        <div class="playlist-title">Corridos Sin Copyright</div>
+        <div class="playlist-frames">
+            <div class="playlist-item">
+                <div class="playlist-number">1</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 1</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/77On0wQzEO4?si=sJNAbCrQAKX0fCVu" title="Corrido 1" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">2</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 2</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/T_oKg5WkBg8?si=F9QgJw4NmMrLKHbo" title="Corrido 2" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">3</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 3</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/OrVZFtQ1JS0?si=g_8K6l1gcRXPTizk" title="Corrido 3" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">4</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 4</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/_Yl6ouut_PQ?si=aqAzMZCi6WJSVYgb" title="Corrido 4" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">5</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 5</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/i4A0vjvcYCc?si=JZRIn5bb59yFbKeH" title="Corrido 5" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">6</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 6</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/QzDxqLhH-OU?si=bJ7PjWqZHcD6EYVV" title="Corrido 6" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">7</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 7</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/a4B94c7goH8?si=10GSBPBJritZ1IbY" title="Corrido 7" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">8</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 8</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/xiUVyWnc7Yw?si=NW6VBjHLEyv8l2u9" title="Corrido 8" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">9</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 9</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/0n1G60O6YfY?si=lq9NQw37I4ZSAeC_" title="Corrido 9" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <div class="playlist-number">10</div>
+                <div class="playlist-info">
+                    <div class="song-title">Corrido 10</div>
+                    <div class="song-desc">Sin copyright - YouTube</div>
+                </div>
+                <div class="playlist-video">
+                    <iframe src="https://www.youtube.com/embed/i7_7ibUXyVU?si=nnauOacuF48fzFQB" title="Corrido 10" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
