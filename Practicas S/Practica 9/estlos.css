@@ -1,0 +1,14 @@
+body {
+    background: #259dcc;
+background: linear-gradient(90deg, rgba(37, 157, 204, 1) 0%, rgba(16, 224, 103, 1) 48%, rgba(193, 222, 87, 1) 90%, rgba(222, 221, 84, 1) 96%, rgba(237, 221, 83, 1) 100%);
+
+
+}
+h1, h2, p {
+    text-align: center;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+}
+h2 {
+    font-family: "Dancing Script", cursive;
+}
