@@ -1,0 +1,338 @@
+/* styles.css - El Chispas Menú
+   Responsive, Grid + Flexbox, animaciones suaves.
+*/
+
+/* Reset y tipografía */
+:root{
+  --accent:#d9302a; /* rojo estilo letrero */
+  --accent-dark:#b22222;
+  --muted:#6b6b6b;
+  --card-bg: #fff;
+  --glass: rgba(255,255,255,0.85);
+  --max-width: 1180px;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  --accent-contrast: #fff;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+ background-image: url('../img/Tela\ Inicial.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+}
+
+/* Header */
+.site-header{
+  background: linear-gradient(90deg,var(--accent),var(--accent-dark));
+  color:var(--accent-contrast);
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  position:sticky;
+  top:0;
+  z-index:30;
+  box-shadow:0 4px 18px rgba(0,0,0,0.12);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo-badge{
+  background:var(--accent-contrast);
+  color:var(--accent);
+  padding:10px 14px;
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-width:110px;
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.logo-top{
+  font-weight:700;
+  letter-spacing:1px;
+  display:block;
+  font-size:16px;
+}
+.logo-sub{
+  font-size:12px;
+  margin-top:2px;
+  opacity:0.9;
+}
+.brand-info h1{margin:0;font-size:20px}
+.brand-info .location{margin:3px 0 0; font-size:13px; opacity:0.95}
+
+/* Nav filtros */
+.top-nav{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.top-nav .filter-btn{
+  background:transparent;
+  color:var(--accent-contrast);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:transform .18s ease, background .18s ease;
+}
+.top-nav .filter-btn:hover{transform:translateY(-3px)}
+.top-nav .filter-btn.active{
+  background:var(--accent-contrast);
+  color:var(--accent);
+  font-weight:600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Layout principal */
+.container{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:28px;
+  max-width:var(--max-width);
+  margin:26px auto;
+  padding:0 16px;
+  align-items:start;
+}
+
+/* Hero */
+.hero{
+  grid-column: 1 / span 1;
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hero-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  transform: scale(1);
+  transition: transform .8s cubic-bezier(.2,.8,.2,1);
+  filter: brightness(0.85);
+}
+.hero:hover .hero-img{ transform: scale(1.03) }
+.hero-overlay{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  color:#fff;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.hero-overlay h2{margin:0;font-size:26px}
+.hero-overlay p{margin:6px 0 0;opacity:0.95}
+
+/* Sidebar */
+.sidebar{ position:relative; top:0; display:flex; flex-direction:column; gap:16px; }
+.card{
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:12px;
+  box-shadow:var(--shadow);
+}
+
+/* Removed QR placeholder as requested */
+
+/* Promo card */
+.special-card .promo{ font-size:15px }
+
+/* Grid de menú: usa CSS Grid flexible */
+.menu-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+  margin-top:12px;
+}
+
+/* Tarjeta de platillo */
+.menu-item{
+  background:var(--card-bg);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transform: translateY(0);
+  transition: transform .18s ease, box-shadow .18s ease;
+  display:flex;
+  flex-direction:column;
+}
+.menu-item:hover{ transform: translateY(-6px); box-shadow: 0 14px 38px rgba(0,0,0,0.12); }
+
+.menu-item img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  display:block;
+  transition: transform .45s ease;
+}
+.menu-item:hover img{ transform: scale(1.04); }
+
+.menu-body{ padding:12px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.menu-body h3{ margin:0; font-size:18px; color:#111; }
+.menu-body .desc{ margin:0; font-size:13px; color:var(--muted) }
+.meta{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:auto;
+}
+.price{
+  background: linear-gradient(90deg, #fff, #fff);
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:700;
+  color:var(--accent-dark);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+.tag{
+  font-size:12px;
+  padding:5px 8px;
+  border-radius:8px;
+  background: #f2f2f2;
+  color:#333;
+  border:1px solid rgba(0,0,0,0.03);
+}
+.view-btn{
+  margin-left:10px;
+  padding:6px 10px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition: transform .12s ease;
+}
+.view-btn:hover{ transform: translateY(-3px); }
+
+/* Footer */
+.site-footer{
+  text-align:center;
+  padding:18px;
+  opacity:0.9;
+  font-size:14px;
+  margin-top:26px;
+}
+
+/* Modal imagen */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.55);
+  z-index:120;
+}
+.modal[aria-hidden="false"]{ display:flex; }
+.modal-content{
+  background: #fff;
+  border-radius:12px;
+  max-width:920px;
+  width:92%;
+  padding:12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  animation: pop .18s ease;
+}
+.modal-content img{ width:100%; height:auto; border-radius:8px; display:block; }
+.modal-close{
+  position:absolute;
+  right:22px;
+  top:16px;
+  background:transparent;
+  color:#fff;
+  border:0;
+  font-size:32px;
+  cursor:pointer;
+}
+@media (max-width: 600px) {
+  /* 1. Ajustes del Header */
+  .site-header {
+    /* Permitir que los elementos se apilen en lugar de mantenerse en fila */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 15px; /* Ajustar padding para que no se vea cortado */
+  }
+
+  .brand {
+    /* Ocupar el ancho completo para centrar o alinear */
+    width: 100%;
+    justify-content: space-between; /* Mantiene el logo y el texto separados si es necesario */
+    margin-bottom: 8px; /* Espacio antes de la navegación */
+  }
+
+  /* 2. Arreglo CLAVE para la navegación que se desborda */
+  .top-nav {
+    width: 100%;
+    /* Permite el scroll horizontal para ver todos los botones */
+    overflow-x: auto;
+    white-space: nowrap; /* Evita que los botones salten de línea */
+    padding-bottom: 8px; /* Espacio para que el scroll se vea mejor */
+    /* Quitar margen excesivo que cause el corte en el extremo */
+    margin-left: -15px; /* Compensa el padding del header */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Asegurar que los botones no sean demasiado grandes */
+  .top-nav .filter-btn {
+      font-size: 14px;
+      padding: 6px 10px;
+  }
+    
+  /* 3. Layout principal */
+  .container {
+    padding: 0 15px 30px 15px;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+    
+  /* 4. Arreglos agresivos para prevenir cualquier desborde */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* El resto de tus reglas */
+  .sidebar, .hero {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+    
+  .logo-badge {
+    /* Ajustar el tamaño del logo para móviles */
+    min-width: 90px;
+    padding: 8px 10px;
+  }
+  .brand-info h1 { font-size: 18px; }
+  .brand-info .location { font-size: 12px; }
+
+}
+
+/* Nueva media query para evitar conflicto con top-nav en tabletas */
+@media (max-width: 768px) and (min-width: 601px) {
+    /* Permitir que en tabletas el contenedor aún sea una columna */
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
